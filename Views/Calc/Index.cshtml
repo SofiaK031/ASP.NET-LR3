@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Сalculator";
+}
+
+        <!--without redirection, "Result:" appears after clicking the button in the corresponding block-->
+
+<div class="calculator-container">
+    <div class="calculator-block">
+        <h1 class="display-6">Addition</h1>
+        <form action="calc/Addition" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+        @if (TempData["AdditionResult"] != null)
+        {
+            <div>
+                <strong>Result:</strong> @TempData["AdditionResult"]
+            </div>
+        }
+    </div>
+
+    <div class="calculator-block">
+        <h1 class="display-6">Subtraction</h1>
+        <form action="calc/Subtraction" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+        @if (TempData["SubtractionResult"] != null)
+        {
+            <div>
+                <strong>Result:</strong> @TempData["SubtractionResult"]
+            </div>
+        }
+    </div>
+
+    <div class="calculator-block">
+        <h1 class="display-6">Multiplication</h1>
+        <form action="calc/Multiplication" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+        @if (TempData["MultiplicationResult"] != null)
+        {
+            <div>
+                <strong>Result:</strong> @TempData["MultiplicationResult"]
+            </div>
+        }
+    </div>
+
+    <div class="calculator-block">
+        <h1 class="display-6">Division</h1>
+        <form action="calc/Division" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+        @if (TempData["DivisionResult"] != null)
+        {
+            <div>
+                <strong>Result:</strong> @TempData["DivisionResult"]
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+                        <!--with redirection
+
+<div class="calculator-container">
+    <div class="calculator-block">
+        <h1 class="display-6">Addition</h1>
+        <form action="calc/Addition" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+    </div>
+    <div class="calculator-block">
+        <h1 class="display-6">Subtraction</h1>
+        <form action="calc/Subtraction" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+    </div>
+    <div class="calculator-block">
+        <h1 class="display-6">Multiplication</h1>
+        <form action="calc/Multiplication" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+    </div>
+    <div class="calculator-block">
+        <h1 class="display-6">Division</h1>
+        <form action="calc/Division" method="get">
+            <label>Value a:</label>
+            <input type="number" name="a" />
+            <br></br>
+            <label>Value b:</label>
+            <input type="number" name="b" />
+            <br></br>
+            <button>Calculate</button>
+        </form>
+    </div>
+</div>
+-->
+
+
+
+<style>
+    .calculator-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .calculator-block {
+        flex: 0 0 50%;
+        margin: 20px auto 20px;
+        padding: 10px;
+        font-size: 18px;
+    }
+</style>
